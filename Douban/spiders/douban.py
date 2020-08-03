@@ -18,8 +18,9 @@ class DoubanSpider(CrawlSpider):
     rules = (
         Rule(LinkExtractor(allow=r'chart'), follow=True),
         Rule(LinkExtractor(allow=r'celebrity/\d+'), follow=True),
-        Rule(LinkExtractor(allow=r'subject/\d+/$'), callback='parse_item', follow=True),
         Rule(LinkExtractor(allow=r'subject/\d+/?from=.*?'), callback='parse_item', follow=True),
+        Rule(LinkExtractor(allow=r'subject/\d+/$'), callback='parse_item', follow=True),
+
     )
 
     def parse_item(self, response):

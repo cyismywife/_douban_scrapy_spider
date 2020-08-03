@@ -54,8 +54,11 @@ ROBOTSTXT_OBEY = False
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
    # 'Douban.middlewares.DoubanDownloaderMiddleware': 543,
-   'Douban.middlewares.RandomUserAgentMiddleware': 543,
+   # 'Douban.middlewares.RandomUserAgentMiddleware': 543,
+   'Douban.middlewares.NewFakeUserAgentMiddleware': 543,
 }
+
+RANDOM_UA_TYPE = 'random'
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
